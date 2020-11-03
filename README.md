@@ -11,3 +11,7 @@ Package and distribute:
 ```bash 
     npm run make
 ```
+Get dependencies:
+```bash 
+    npm install
+```
