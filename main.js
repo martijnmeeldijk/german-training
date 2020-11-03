@@ -1,5 +1,14 @@
 const { app, BrowserWindow } = require('electron');
 const storage = require('electron-json-storage');
+const Store = require('./store.js');
+
+const store = new Store({
+    // We'll call our data file 'user-preferences'
+    configName: 'questions',
+    defaults: {
+      questions: [{ question: 'test', answer: '600' },]
+    }
+  });
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -10,11 +19,11 @@ function createWindow () {
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile('index.html');
   //win.webContents.openDevTools()
 }
 
-app.whenReady().then(createWindow)
+app.whenReady().then(createWindow);
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
