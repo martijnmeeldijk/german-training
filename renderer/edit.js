@@ -28,22 +28,16 @@ $('add-entry').on("click", () => {
 
 // on receive entrys
 ipcRenderer.on('entries', (event, entries) => {
-  console.log('received entries');
-  console.log(entries);
-  console.log("----------------------");
-  // get the entryList ul
 
-  // create html string
   const entryItems = entries.reduce((html, entry, i) => {
-    console.log(entry);
-    console.log(entry.question);
+
     html += 
     `
     <tr class="entry-row">
         <th class="entry-index">${i}</th>
         <td>${entry.question}</td>
         <td>${entry.answer}</td>
-        <td class="delete-button" style="cursor: pointer;">delete</td>
+        <td class="delete-button" style="cursor: pointer;"><i style="color: #2c3e50" class="fa fa-trash" aria-hidden="true"></i></td>
     </tr>
     `;
 
@@ -56,9 +50,9 @@ ipcRenderer.on('entries', (event, entries) => {
   // add click handlers to delete the clicked entry
   $('.delete-button').on('click', 
     (e) => {
-      console.log($(e.target).parent().find('.entry-index').text());
       ipcRenderer.send('delete-entry', $(e.target).parent().find('.entry-index').text());
     });
+    $("#question-input").trigger('focus');
 });
 
 

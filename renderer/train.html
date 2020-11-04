@@ -42,36 +42,49 @@
             </div>
         </div>
     </nav>
-    <!-- Masthead-->
-    <div class="container question-container">
-        <div class="d-flex justify-content-center">
-            <form id="question-form" class="p-5 m-5" onsubmit="return false">
-                <div id="wrong-answer" class="alert alert-danger" style="display: none;" role="alert">
-                    Oh no! that is not correct.
-                  </div>
-                <div class="form-group">
-                  <label for="answer" id="question"></label>
-                  <input type="answer" class="form-control" id="answer" placeholder="Enter answer">
-                </div>
-                <button id="submit-button" type="submit" class="btn btn-primary">Submit</button>
-                <button id="show-answer" onclick="return false;" class="btn btn-primary">Show answer</button>
-              </form>
 
+    <div class="container p-5 ">
+        <div style="float: right;" class="row align-middle">
+            <h3 id="streak">0 <i style="color: #ff7434; " class="fa fa-fire" aria-hidden="true"></i></h3>
+            
         </div>
-
-    </div>
-    <div class="container good-container" style="display: none;">
-        <div class="d-flex  justify-content-center p-5 m-5">
-            <div class="row flex-column">
-                <h1>Good job</h1>
-                <button id="next-question" class="btn btn-primary">Next question</button>
+        
+        <div class="container d-flex align-items-center flex-column">
+            <h1>Time to train!</h1>
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar" src="assets/img/avataaars.png" width="100px" alt="" />              
+        </div>
+        <!-- Masthead-->
+        <div class="container question-container">
+            <div class="d-flex justify-content-center">
+                <form id="question-form" class="" onsubmit="return false">
+                    <div id="wrong-answer" class="alert alert-danger" style="display: none;" role="alert">
+                        Oh no! that is not correct.
+                      </div>
+                    <div class="form-group">
+                      <h4 id="question"></h4>
+                      <input type="answer" class="form-control" id="answer" placeholder="Enter answer">
+                    </div>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Submit</button>
+                    <button id="show-answer" onclick="return false;" class="btn btn-primary">Show answer</button>
+                  </form>
+    
             </div>
-
+    
         </div>
-
+        <div class="container good-container" style="display: none;">
+            <div class="d-flex  justify-content-center">
+                <div class="row flex-column">
+                    <h1>Good job</h1>
+                    <button id="next-question" class="btn btn-primary">Next question</button>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    
     </div>
-
-
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
     <div class="scroll-to-top d-lg-none position-fixed">
