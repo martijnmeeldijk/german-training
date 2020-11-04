@@ -23,7 +23,7 @@ The app will question you and give feedback.
 
 ### Streaks
 
-If you keep answering correctly, you streak will increase. But watch out, if you get a question wrong, your streak will reset.
+If you keep answering correctly, your streak will increase. But watch out, if you get a question wrong, your streak will reset.
 
 ![image-20201104185250105](img/image-20201104185250105.png)
 
