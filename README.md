@@ -3,7 +3,7 @@ An app to train my german vocabs, written in electron.js
 
 Available for mac and windows: [click here](https://github.com/martijnmeeldijk/german-training/releases/tag/0.1.0)
 
-
+Windows doesn't trust my app, so when you install it, you'll be greeted by a message telling you not to run it. Just click the `show more` button and click `run anyway` to continue.
 
 ## Features
 
