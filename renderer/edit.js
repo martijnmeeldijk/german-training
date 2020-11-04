@@ -19,9 +19,7 @@ $("#add-form").on('submit', (evt) => {
   question.value = answer.value = '';
 })
 
-const deleteTodo = (e) => {
-  ipcRenderer.send('delete-entry', e.target.textContent);
-}
+
 
 // create add entry window button
 $('add-entry').on("click", () => {
@@ -36,14 +34,16 @@ ipcRenderer.on('entries', (event, entries) => {
   // get the entryList ul
 
   // create html string
-  const entryItems = entries.reduce((html, entry) => {
+  const entryItems = entries.reduce((html, entry, i) => {
     console.log(entry);
     console.log(entry.question);
     html += 
     `
-    <tr>
+    <tr class="entry-row">
+        <th class="entry-index">${i}</th>
         <td>${entry.question}</td>
         <td>${entry.answer}</td>
+        <td class="delete-button" style="cursor: pointer;">delete</td>
     </tr>
     `;
 
@@ -54,12 +54,13 @@ ipcRenderer.on('entries', (event, entries) => {
   $('#entry-list').html(entryItems);
 
   // add click handlers to delete the clicked entry
-  $('.entry-item').each(item => {
-    item.addEventListener('click', deleteTodo);
-  });
-
-  
+  $('.delete-button').on('click', 
+    (e) => {
+      console.log($(e.target).parent().find('.entry-index').text());
+      ipcRenderer.send('delete-entry', $(e.target).parent().find('.entry-index').text());
+    });
 });
+
 
 $(function() {
   ipcRenderer.send('get-entries');

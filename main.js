@@ -29,9 +29,8 @@ function createWindow () {
   });
   //win.webContents.openDevTools()
   ipcMain.on('delete-entry', (event, entry) => {
-    const updatedEntries = store.deleteTodo(entry).entries;
-
-    mainWindow.send('entries', updatedEntries);
+    const updatedEntries = store.deleteEntry(entry).entries;
+    win.send('entries', updatedEntries);
   });
 }
 
