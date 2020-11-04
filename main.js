@@ -18,7 +18,11 @@ function createWindow () {
   win.loadFile(path.join('renderer', 'index.html'));
 
   ipcMain.on('get-entries', (event) => {
-    win.send('entries', store.entries);
+    win.send('entries', store.getEntries().entries);
+  });
+
+  ipcMain.on('random-entry', (event) => {
+    win.send('entry', store.getRandomEntry());
   });
 
   ipcMain.on('add-entry', (event, entry) => {

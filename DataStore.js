@@ -26,9 +26,8 @@ class DataStore extends Store {
   }
 
   getRandomEntry () {
-    // set object's entries to entries in JSON file
-
-    return this.entries[Math.floor(Math.random() * this.entries.length)];
+    // gets random entry
+    return (this.get('entries') || [])[Math.floor(Math.random() * this.entries.length)];
   }
 
   addEntry (entry) {
