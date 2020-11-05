@@ -51,6 +51,10 @@ Package and distribute:
 ```bash 
     npm run make
 ```
+Package and distribute cross-platform:
+```bash 
+    npm run makex
+```
 Get dependencies:
 ```bash 
     npm install
