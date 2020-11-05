@@ -3,7 +3,7 @@ An app to train my german vocabs, written in electron.js
 
 Available for mac and windows: [click here](https://github.com/martijnmeeldijk/german-training/releases/tag/0.1.0)
 
-
+Windows doesn't trust my app, so when you install it, you'll be greeted by a message telling you not to run it. Just click the `show more` button and click `run anyway` to continue.
 
 ## Features
 
@@ -23,7 +23,7 @@ The app will question you and give feedback.
 
 ### Streaks
 
-If you keep answering correctly, you streak will increase. But watch out, if you get a question wrong, your streak will reset.
+If you keep answering correctly, your streak will increase. But watch out, if you get a question wrong, your streak will reset.
 
 ![image-20201104185250105](img/image-20201104185250105.png)
 
@@ -50,6 +50,10 @@ Start app in dev:
 Package and distribute:
 ```bash 
     npm run make
+```
+Package and distribute cross-platform:
+```bash 
+    npm run makex
 ```
 Get dependencies:
 ```bash 
