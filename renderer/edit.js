@@ -37,7 +37,7 @@ ipcRenderer.on('entries', (event, entries) => {
         <th class="entry-index">${i}</th>
         <td>${entry.question}</td>
         <td>${entry.answer}</td>
-        <td class="delete-button" style="cursor: pointer;"><i style="color: #2c3e50" class="fa fa-trash" aria-hidden="true"></i></td>
+        <td id="${i}" class="delete-button" style="cursor: pointer;"><button onclick="deleteButtonPressed(${i})" class="btn btn-primary"><i style="color: #EEE" class="fa fa-trash" aria-hidden="true"></i></button></td>
     </tr>
     `;
 
@@ -48,13 +48,14 @@ ipcRenderer.on('entries', (event, entries) => {
   $('#entry-list').html(entryItems);
 
   // add click handlers to delete the clicked entry
-  $('.delete-button').on('click', 
-    (e) => {
-      ipcRenderer.send('delete-entry', $(e.target).parent().find('.entry-index').text());
-    });
-    $("#question-input").trigger('focus');
+   
 });
 
+function deleteButtonPressed(i) {
+    console.log(i);
+    //$("#question-input").trigger('focus');
+    ipcRenderer.send('delete-entry', i);
+  }
 
 $(function() {
   ipcRenderer.send('get-entries');
