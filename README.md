@@ -53,7 +53,7 @@ Package and distribute:
 ```
 Package and distribute cross-platform:
 ```bash 
-    npm run makex
+    npm run buildx
 ```
 Get dependencies:
 ```bash 
